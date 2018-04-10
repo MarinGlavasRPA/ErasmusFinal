@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Erasmus.Models.Student>
+
+@{
+    ViewBag.Title = "Studenti";
+}
+
+<h2>Popis studenata</h2>
+@using (Html.BeginForm("SearchIndex", "Students", FormMethod.Get))
+{
+<p>
+    Studijski program: @Html.DropDownList("searchProgram", "Svi programi")
+    Puno ime studenta: @Html.TextBox("SearchString")
+    <input type="submit" value="Pretraži" />
+</p>
+}
+
+
+<p>
+    @Html.ActionLink("Novi unos", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SlikaDatoteka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PunoImeStudenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AkademskaGodina)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.StudijskiProgram)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ZemljaStudija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <img class="img-rounded center-block" width="56" height="36" src="@Url.Action("DohvatiSliku", "Students", new { slikaId = item.ID })" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PunoImeStudenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AkademskaGodina)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.StudijskiProgram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZemljaStudija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Detalji", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Brisanje", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+    }
+
+</table>

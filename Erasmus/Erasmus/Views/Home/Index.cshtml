@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Naslovna";
+}
+
+<div class="jumbotron">
+    <video style="float:right" width="480" height="240" controls>
+        <source src="~/Content/ESN.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1>
+        Erasmus
+    </h1>
+    <p class="lead">
+        Changing lives, opening minds.
+    </p>
+ <p><a href="https://esn.org" class="btn btn-primary btn-lg">Nauči više &raquo;</a></p>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <p>
+            <img src=" ~/Content/index.png" width="130" height="120" />
+        </p>
+        <h2>Pregled studenata</h2>
+        <p>
+            Pregledajte trenutne studente na razmjeni.
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Students")">Pregledaj &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <p>
+            <img src=" ~/Content/person.png" width="130" height="120" />
+        </p>
+        <h2>Unos novog studenta</h2>
+        <p>Unesite novog studenta u sustav</p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Create", "Students")">Unesi &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <p>
+            <img src=" ~/Content/kolegiji.png" width="130" height="120" />
+        </p>
+        <h2>Pregled po kolegijima</h2>
+        <p>Pregledajte studente prema kolegijima koje pohađaju.</p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Kolegijs")">Pregledaj &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+﻿@model Erasmus.Models.Student
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AkademskaGodina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkademskaGodina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RokLjetni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RokLjetni)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RokZimski)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RokZimski)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudijskiProgram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudijskiProgram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodrucjeStudija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodrucjeStudija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PunoImeStudenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PunoImeStudenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MjestoRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MjestoRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZemljaRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZemljaRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalnost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalnost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OIB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SveucilisteInstitucija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SveucilisteInstitucija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkolaOdjel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkolaOdjel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GradStudija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GradStudija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZemljaStudija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZemljaStudija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlikaDatoteka)
+        </dt>
+
+        <dd>
+            <img class="img-responsive" src="@Url.Action("DohvatiSliku", "Students", new { slikaId = Model.ID })" />
+        </dd>
+
+    </dl>
+    @Html.Action("Kolegijs", "Students", new { StudentID = Model.ID })
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Nazad na popis", "Index")
+</p>

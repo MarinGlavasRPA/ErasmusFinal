@@ -1,0 +1,152 @@
+﻿@model Erasmus.Models.Student
+
+@{
+    ViewBag.Title = "Brisanje";
+}
+
+<h2>Brisanje</h2>
+
+<h3>Jeste li sigurni da želite izbrisati ovaj unos?</h3>
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AkademskaGodina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkademskaGodina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rok)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rok)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudijskiProgram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudijskiProgram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodrucjeStudija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodrucjeStudija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PunoImeStudenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PunoImeStudenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MjestoRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MjestoRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZemljaRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZemljaRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalnost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalnost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OIB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SveucilisteInstitucija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SveucilisteInstitucija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkolaOdjel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkolaOdjel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GradStudija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GradStudija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZemljaStudija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZemljaStudija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Izbriši" class="btn btn-default" /> |
+            @Html.ActionLink("Nazad na popis", "Index")
+        </div>
+    }
+</div>

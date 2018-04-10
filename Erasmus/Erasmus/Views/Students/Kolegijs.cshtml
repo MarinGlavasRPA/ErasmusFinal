@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Erasmus.Models.Kolegij>
+
+@{
+    ViewBag.Title = "Studenti u kolegijima";
+}
+
+<h4>Kolegiji</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NazivKolegija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NositeljKolegija)
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazivKolegija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NositeljKolegija)
+            </td>
+           
+        </tr>
+    }
+
+</table>
+
+
+

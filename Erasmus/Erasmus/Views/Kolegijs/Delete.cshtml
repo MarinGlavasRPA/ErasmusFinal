@@ -1,0 +1,72 @@
+﻿@model Erasmus.Models.Kolegij
+
+@{
+    ViewBag.Title = "Brisanje";
+}
+
+<h2>Izbriši</h2>
+
+<h3>Jeste li sigurni da želite izbrisati ovaj unos?</h3>
+<div>
+    <h4>Kolegij</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivKolegija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivKolegija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NositeljKolegija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NositeljKolegija)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Students.PunoImeStudenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.PunoImeStudenta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RBrRoka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RBrRoka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumRoka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumRoka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ocjena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ocjena)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Izbriši" class="btn btn-default" /> |
+        @Html.ActionLink("Na popis", "Index")
+    </div>
+    }
+</div>

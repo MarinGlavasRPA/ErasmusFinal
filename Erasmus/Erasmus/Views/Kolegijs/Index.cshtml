@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Erasmus.Models.Kolegij>
+
+@{
+    ViewBag.Title = "Popis";
+}
+
+<h2>Popis kolegija</h2>
+
+<p>
+    @Html.ActionLink("Novi unos", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NazivKolegija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NositeljKolegija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Students.PunoImeStudenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RBrRoka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumRoka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ocjena)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Students.AkademskaGodina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazivKolegija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NositeljKolegija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RBrRoka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumRoka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ocjena)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
