@@ -1,6 +1,8 @@
 ﻿@model Erasmus.Models.Student
 
 @{
+    /**/
+
     ViewBag.Title = "Novi student";
 }
 
@@ -11,31 +13,26 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Student</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <h5>Podaci o studiju</h5>
-    <div class="form-group">
-        @Html.LabelFor(model => model.AkademskaGodina, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.AkademskaGodina, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AkademskaGodina, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <h4>Student</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <h5>Podaci o studiju</h5>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AkademskaGodina, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.AkademskaGodina, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AkademskaGodina, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.RokLjetni, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.CheckBoxFor(model => model.RokLjetni, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.RokLjetni, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.RokZimski, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.CheckBoxFor(model => model.RokZimski, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.RokZimski, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Semestar, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                Ljetni: @Html.RadioButtonFor(m => m.Semestar, "Ljetni")
+                <br />
+                Zimski: @Html.RadioButtonFor(m => m.Semestar, "Zimski")
+            </div>
         </div>
     </div>
 
@@ -44,7 +41,7 @@
         @Html.LabelFor(model => model.StudijskiProgram, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             Preddiplomski studij: @Html.RadioButtonFor(m => m.StudijskiProgram, "Preddiplomski studij")
-            <br/>
+            <br />
             Diplomski studij: @Html.RadioButtonFor(m => m.StudijskiProgram, "Diplomski studij")
         </div>
     </div>
@@ -78,8 +75,6 @@
         <div class="col-md-10">
             Muško: @Html.RadioButtonFor(m => m.Spol, "Muško")
             Žensko: @Html.RadioButtonFor(m => m.Spol, "Žensko")
-            Ostalo: @Html.RadioButtonFor(m => m.Spol, "Ostalo")
-
         </div>
     </div>
 
@@ -112,6 +107,27 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.OIB, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.OIB, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.MIN, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MIN, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MIN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DatumDolaska, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DatumDolaska, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DatumDolaska, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SlikaDatoteka, "SlikaDatoteka", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input class="btn btn-default" type="file" name="Image">
         </div>
     </div>
     <h5>Podaci o instituciji</h5>
@@ -147,27 +163,13 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Datum, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Datum, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Datum, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.SlikaDatoteka, "SlikaDatoteka", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input class="btn btn-default" type="file" name="Image">
-        </div>
-    </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Unesi" class="btn btn-default" />
         </div>
     </div>
-</div>
 }
 
 <div>

@@ -11,11 +11,8 @@ namespace Erasmus.Models
     {
         public int ID { get; set; }
         [Display(Name = "Akademska godina")]
-        public string AkademskaGodina { get; set; }
-        [Display(Name = "Ljetni rok")]
-        public bool RokLjetni { get; set; }
-        [Display(Name = "Zimski rok")]
-        public bool RokZimski { get; set; }
+        public AkGodina AkademskaGodina { get; set; }
+        public string Semestar { get; set; }
         [Display(Name = "Studijski program")]
         public string StudijskiProgram { get; set; }
         [Display(Name = "Područje studija")]
@@ -32,6 +29,12 @@ namespace Erasmus.Models
         public Country ZemljaRodenja { get; set; }
         public string Nacionalnost { get; set; }
         public string OIB { get; set; }
+        public string MIN { get; set; }              //treba biti primarni ključ, ručni unos podataka, ne auto inkrement
+        [Display(Name = "Datum Dolaska")]
+        [DataType(DataType.Date)]
+        public DateTime DatumDolaska { get; set; }
+        [Display(Name = "Slika")]
+        public byte[] SlikaDatoteka { get; set; }
         [Display(Name = "Sveučilište/institucija")]
         public string SveucilisteInstitucija { get; set; }
         [Display(Name = "Škola/odjel")]
@@ -40,10 +43,7 @@ namespace Erasmus.Models
         public string GradStudija { get; set; }
         [Display(Name = "Zemlja studija")]
         public Country ZemljaStudija { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime Datum { get; set; }
-        [Display(Name = "Slika")]
-        public byte[] SlikaDatoteka { get; set; }
+       
 
         public string MimeTypeSlika { get; set; }
 
@@ -183,7 +183,8 @@ namespace Erasmus.Models
         VaticanCity,
         Venezuela, Vietnam, Yemen, Zambia, Zimbabwe
     }
-
+    public enum AkGodina
+    {2008.-2009.,  }           // Popis za dropdown listu svojstva AkademskaGodina, mora biti od 2008-e do 2030-e
 
     // DB CONTEXT
 
